@@ -167,11 +167,11 @@ def makeGraph(G):
 				nodes[uid] = node 
 
 		# HARD PART CREATING FRIENDSHIPS (EDGES IN THE GRAPH)
-		with open(external_hard_drive_path + '/sample-friends.csv', 'r') as fb_friends:
+		with open(external_hard_drive_path + '/fb_friendship.csv', 'r') as fb_friends:
 			friends_reader = csv.DictReader(fb_friends)
 			for row in friends_reader:
-				friend1_uid = row['\ufeffa']
-				friend2_uid = row['b']
+				friend1_uid = row['friend1']
+				friend2_uid = row['friend2']
 
 				if friend1_uid in nodes:
 					node1 = nodes[friend1_uid]
